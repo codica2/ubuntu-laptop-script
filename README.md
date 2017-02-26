@@ -25,9 +25,9 @@ Install
 Download, review, then execute the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/codica/ubuntu-laptop-sript/master/linux
+curl --remote-name https://raw.githubusercontent.com/codica2/ubuntu-laptop-sript/master/linux
 less linux
-sh mac 2>&1 | tee ~/laptop.log
+sh linux 2>&1 | tee ~/laptop.log
 ```
 
 What it sets up
@@ -37,11 +37,13 @@ Unix tools:
 
 * [Git] for version control
 * [OpenSSL] for Transport Layer Security (TLS)
+* [Guake] to replace a standart terminal
 * [Tmux] for saving project state and switching between projects
 * [Zsh] as your shell
 
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
+[Guake]: http://guake-project.org/
 [Tmux]: http://tmux.github.io/
 [Zsh]: http://www.zsh.org/
 
@@ -84,9 +86,7 @@ Programming languages and configuration:
 Databases:
 
 * [Postgres] for storing relational data
-* [Redis] for storing key-value data
 
 [Postgres]: http://www.postgresql.org/
-[Redis]: http://redis.io/
 
 It should take less than 15 minutes to install (depends on your machine).
