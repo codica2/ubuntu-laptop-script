@@ -38,13 +38,14 @@ Unix tools:
 * [OpenSSL] for Transport Layer Security (TLS)
 * [Guake] to replace a standart terminal
 * [Tmux] for saving project state and switching between projects
-* [Zsh] as your shell
+* [Zsh] as your shell and [Oh-my-Zsh] as brilliant addons
 
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
 [Guake]: http://guake-project.org/
 [Tmux]: http://tmux.github.io/
 [Zsh]: http://www.zsh.org/
+[Oh-my-Zsh]: http://ohmyz.sh/
 
 Heroku tools:
 
