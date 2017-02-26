@@ -61,7 +61,8 @@ fancy_echo "Installing the heroku-config plugin to pull config variables locally
 fancy_echo "Installing chrome ..."
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-  sudo apt-get install google-chrome-stable
+  sudo apt update
+  sudo apt install -y google-chrome-stable
 
 fancy_echo "Installing oh-my-zsh ..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
