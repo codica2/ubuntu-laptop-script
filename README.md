@@ -25,7 +25,7 @@ Install
 Download, review, then execute the script:
 
 ```sh
-curl --remote-name https://github.com/codica2/ubuntu-laptop-script/blob/master/linux
+curl --remote-name https://raw.githubusercontent.com/codica2/ubuntu-laptop-script/master/linux
 sh linux
 ```
 
