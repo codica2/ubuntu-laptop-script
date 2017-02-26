@@ -7,7 +7,7 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
-For MacOS please use [https://github.com/thoughtbot/laptop]: https://github.com/thoughtbot/laptop
+For MacOS please use [https://github.com/thoughtbot/laptop](https://github.com/thoughtbot/laptop)
 
 Requirements
 ------------
