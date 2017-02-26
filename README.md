@@ -26,8 +26,7 @@ Download, review, then execute the script:
 
 ```sh
 curl --remote-name https://raw.githubusercontent.com/codica2/ubuntu-laptop-sript/master/linux
-less linux
-sh linux 2>&1 | tee ~/laptop.log
+sh linux
 ```
 
 What it sets up
