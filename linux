@@ -51,7 +51,7 @@ fancy_echo "Installing RVM"
 fancy_echo "Configuring Gem & Bundler for faster, parallel gem installation ..."
   echo 'gem: --no-document --no-ri --no-rdoc' > ~/.gemrc
   mkdir .bundle
-  echo '---\nBUNDLE_--JOBS: "5"' > ~/.bundle/config
+  echo 'BUNDLE_--JOBS: "5"' > ~/.bundle/config
 
 fancy_echo "Installing Heroku CLI client ..."
   curl -s https://toolbelt.heroku.com/install-ubuntu.sh | sh
