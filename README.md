@@ -93,10 +93,11 @@ Databases:
 [Postgres]: http://www.postgresql.org/
 [Redis]: https://redis.io/
 
-Text editors:
+Editors:
 
 * [Sublime Text 3] for developing
+* [VS Code] source code editor
 
 [Sublime Text 3]: https://www.sublimetext.com/
-
+[VS Code]: https://code.visualstudio.com/
 It should take less than 15 minutes to install (depends on your machine).

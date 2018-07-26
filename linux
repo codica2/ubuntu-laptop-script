@@ -50,6 +50,12 @@ fancy_echo "Installing Sublime Text 3 ..."
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt-get update && sudo apt-get -y install sublime-text
 
+fancy_echo "Installing VS Code ..."
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+  sudo apt-get update && sudo apt-get install -y code
+
 fancy_echo "Installing Unity Tweak Tool ..."
   sudo apt-get install unity-tweak-tool
 
