@@ -66,8 +66,10 @@ Image tools:
 Testing tools:
 
 * [Qt] for headless JavaScript testing via Capybara Webkit
+* [Ngrok] to expose a web server running on your local machine to the internet
 
 [Qt]: http://qt-project.org/
+[Ngrok]: https://ngrok.com/
 
 Programming languages and configuration:
 
@@ -86,7 +88,15 @@ Programming languages and configuration:
 Databases:
 
 * [Postgres] for storing relational data
+* [Redis] for caching
 
 [Postgres]: http://www.postgresql.org/
+[Redis]: https://redis.io/
+
+Text editors:
+
+* [Sublime Text 3] for developing
+
+[Sublime Text 3]: https://www.sublimetext.com/
 
 It should take less than 15 minutes to install (depends on your machine).

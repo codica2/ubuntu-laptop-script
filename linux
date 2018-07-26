@@ -15,7 +15,7 @@ fancy_echo "Installing git, for source control management ..."
   sudo apt install -y git
 
 fancy_echo "Installing libraries for common gem dependencies ..."
-  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
+  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https
 
 fancy_echo "Installing sqlite3, for prototyping database-backed rails apps ..."
  sudo apt install -y libsqlite3-dev sqlite3
@@ -30,19 +30,35 @@ fancy_echo "Installing guake, a super terminal"
   sudo apt install -y guake
 
 fancy_echo "Installing ImageMagick, to crop and resize images ..."
-  sudo apt install -y imagemagick
+  sudo apt install -y imagemagick libmagickwand-dev
 
 fancy_echo "Installing curl ..."
   sudo apt install -y curl
+
+fancy_echo "Installing Redis ..."
+  wget http://download.redis.io/redis-stable.tar.gz &&
+  tar xvzf redis-stable.tar.gz &&
+  cd redis-stable  && make
+  sudo cp src/redis-server /usr/local/bin/
+  sudo cp src/redis-cli /usr/local/bin/
+
+fancy_echo "Installing Ngrok ..."
+  wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ngrok-stable-linux-amd64.zip && rm ngrok-stable-linux-amd64.zip
+
+fancy_echo "Installing Sublime Text 3 ..."
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  sudo apt-get update && sudo apt-get -y install sublime-text
+
+fancy_echo "Installing Unity Tweak Tool ..."
+  sudo apt-get install unity-tweak-tool
 
 fancy_echo "Installing zsh ..."
   sudo apt install -y zsh
 
 fancy_echo "Installing node, to render the rails asset pipeline ..."
-  sudo apt install -y nodejs
-
-fancy_echo "Installing npm ..."
-  sudo apt install -y npm
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  sudo apt-get install -y nodejs
 
 fancy_echo "Installing RVM"
   command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
