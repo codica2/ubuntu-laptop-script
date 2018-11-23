@@ -101,3 +101,12 @@ Editors:
 [Sublime Text 3]: https://www.sublimetext.com/
 [VS Code]: https://code.visualstudio.com/
 It should take less than 15 minutes to install (depends on your machine).
+
+## License
+ubuntu-laptop-script is Copyright © 2015-2018 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+## About Codica
+
+[![Codica logo](https://www.codica.com/assets/images/logo/logo.svg)](https://www.codica.com)
+
+We love open source software! See [our other projects](https://github.com/codica2) or [hire us](https://www.codica.com/) to design, develop, and grow your product.
