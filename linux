@@ -15,7 +15,24 @@ fancy_echo "Installing git, for source control management ..."
   sudo apt install -y git
 
 fancy_echo "Installing libraries for common gem dependencies ..."
-  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https
+  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https ca-certificates gnupg-agent software-properties-common
+
+fancy_echo "Installing snapd canonical package manager"
+  sudo apt install -y snapd
+
+fancy_echo "Installing VLC media player"
+  sudo snap install vlc
+
+fancy_echo "Installing Postman API development environment"
+  sudo snap install postman
+
+fancy_echo "Installing simple screen recorder"
+  sudo apt install -y simplescreenrecorder
+
+fancy_echo "Installing Joxi"
+  wget -q "http://dl.joxi.ru/linux/joxi-amd64.deb"
+  sudo apt install -y ./joxi-amd64.deb
+  rm joxi-amd64.deb
 
 fancy_echo "Installing sqlite3, for prototyping database-backed rails apps ..."
  sudo apt install -y libsqlite3-dev sqlite3
@@ -91,6 +108,22 @@ fancy_echo "Generating ssh key"
   ssh-keygen -t ed25519 -f /home/user/.ssh/key-ed25519 -q -N "yourname.codica@gmail.com"
   sudo mv ~/.config/autostart/gnome-keyring-ssh.desktop ~/.config/autostart/gnome-keyring-ssh.backup 
   ssh-add /home/user/.ssh/key-ed25519
+
+fancy_echo "Installing Docker"
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+  sudo apt-get update
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+fancy_echo "Installing Wine"
+  wget -nc https://dl.winehq.org/wine-builds/winehq.key
+  sudo apt-key add winehq.key
+  sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
+  sudo apt update
+  sudo apt install -y --install-recommends winehq-stable
 
   fancy_echo "Installing oh-my-zsh ..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
