@@ -26,7 +26,7 @@ Download, review, then execute the script:
 
 ```sh
 curl --remote-name https://raw.githubusercontent.com/codica2/ubuntu-laptop-script/master/linux
-sh linux
+sh linux your@email.com
 ```
 
 What it sets up
@@ -34,12 +34,18 @@ What it sets up
 
 Unix tools:
 
+* [WINE] is not an emulator
+* [Docker] for containers
+* [Snapd] canonical package manager
 * [Git] for version control
 * [OpenSSL] for Transport Layer Security (TLS)
 * [Guake] to replace a standart terminal
 * [Tmux] for saving project state and switching between projects
 * [Zsh] as your shell and [Oh-my-Zsh] as brilliant addons
 
+[WINE]: https://www.winehq.org/
+[Docker]: https://www.docker.com/
+[Snapd]: https://snapcraft.io/
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
 [Guake]: http://guake-project.org/
@@ -59,9 +65,16 @@ GitHub tools:
 
 [Hub]: http://hub.github.com/
 
-Image tools:
+Media tools:
 
+* [Simple Screen Recorder] for screen recording
 * [ImageMagick] for cropping and resizing images
+* [VLC] media player
+* [Joxi] for screen capture
+
+[Joxi]: https://joxi.net/
+[VLC]: https://www.videolan.org/vlc/index.html
+[Simple Screen Recorder]: https://www.maartenbaert.be/simplescreenrecorder/
 
 Testing tools:
 
@@ -103,7 +116,7 @@ Editors:
 It should take less than 15 minutes to install (depends on your machine).
 
 ## License
-ubuntu-laptop-script is Copyright © 2015-2018 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
+ubuntu-laptop-script is Copyright © 2015-2019 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## About Codica
 
