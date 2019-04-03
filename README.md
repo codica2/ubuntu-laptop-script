@@ -34,7 +34,7 @@ What it sets up
 
 Unix tools:
 
-* [WINE] is not an emulator
+* [WINE] is a compatibility layer capable of running Windows applications
 * [Docker] for containers
 * [Snapd] canonical package manager
 * [Git] for version control
