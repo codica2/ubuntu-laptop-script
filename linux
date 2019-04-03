@@ -6,10 +6,10 @@
 
 fancy_echo() {
   local fmt="$1"; shift
-
-  # shellcheck disable=SC2059
   printf "\n$fmt\n" "$@"
-}
+  }
+
+read -p "Enter your email to generate ssh key: " email
 
 fancy_echo "Installing git, for source control management ..."
   sudo apt install -y git
@@ -104,8 +104,8 @@ fancy_echo "Installing chrome ..."
   sudo apt update
   sudo apt install -y google-chrome-stable
 
-fancy_echo "Generating ssh key"  
-  ssh-keygen -t ed25519 -f /home/user/.ssh/key-ed25519 -q -N "yourname.codica@gmail.com"
+fancy_echo "Generating ssh key"
+  ssh-keygen -b 4096 -t ed25519 -f /home/user/.ssh/key-ed25519 -q -N "" -C "$email"
   sudo mv ~/.config/autostart/gnome-keyring-ssh.desktop ~/.config/autostart/gnome-keyring-ssh.backup 
   ssh-add /home/user/.ssh/key-ed25519
 
