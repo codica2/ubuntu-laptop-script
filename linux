@@ -74,8 +74,9 @@ fancy_echo "Installing VS Code ..."
 fancy_echo "Installing Unity Tweak Tool ..."
   sudo apt install -y unity-tweak-tool
 
-fancy_echo "Installing zsh ..."
+fancy_echo "Installing zsh and making it default shell..."
   sudo apt install -y zsh
+  chsh -s $(which zsh)
 
 fancy_echo "Installing node, to render the rails asset pipeline ..."
   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
