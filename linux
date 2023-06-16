@@ -18,7 +18,7 @@ fancy_echo "Installing git, for source control management ..."
   sudo apt install -y git
 
 fancy_echo "Installing libraries for common gem dependencies ..."
-  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https ca-certificates gnupg-agent software-properties-common
+  sudo apt --ignore-missing install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 fancy_echo "Installing snapd canonical package manager"
   sudo apt install -y snapd
