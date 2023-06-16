@@ -126,7 +126,7 @@ fancy_echo "Installing Wine"
   sudo apt install -y --install-recommends winehq-stable
 
 fancy_echo "Installing oh-my-zsh ..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 if [ -f "$HOME/.laptop-ubuntu.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop-ubuntu.local ..."
