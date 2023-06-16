@@ -14,7 +14,7 @@ Requirements
 
 We support:
 
-* Ubuntu 16.04 LTS
+* Ubuntu 22.04.2 LTS
 
 Older versions may work but aren't regularly tested. Bug reports for older
 versions are welcome.
