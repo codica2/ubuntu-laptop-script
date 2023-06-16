@@ -93,10 +93,11 @@ fancy_echo "Installing Ruby"
   sudo apt install -y ruby
 
 fancy_echo "Installing Heroku CLI client ..."
-  curl -s https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
-fancy_echo "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables ..."
-  heroku plugins:install git://github.com/ddollar/heroku-config.git
+fancy_echo "Installing Heroku plugins ..."
+  heroku plugins:install heroku-accounts
+  heroku plugins:install heroku-config
 
 fancy_echo "Installing chrome ..."
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
