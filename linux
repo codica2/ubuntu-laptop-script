@@ -4,10 +4,13 @@
 # Welcome to the codica laptop script! Be prepared to turn your laptop (or
 # desktop, no haters here) into an awesome development machine.
 
+RED='\033[0;32m'
+NC='\033[0m'
+
 fancy_echo() {
   local fmt="$1"; shift
-  printf "\n$fmt\n" "$@"
-  }
+  printf "\\n${RED}$fmt${NC}\\n" "$@"1
+}
 
 read -p "Enter your email to generate ssh key: " email
 
@@ -15,7 +18,7 @@ fancy_echo "Installing git, for source control management ..."
   sudo apt install -y git
 
 fancy_echo "Installing libraries for common gem dependencies ..."
-  sudo apt install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https ca-certificates gnupg-agent software-properties-common
+  sudo apt --ignore-missing install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev build-essential apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 fancy_echo "Installing snapd canonical package manager"
   sudo apt install -y snapd
@@ -63,21 +66,17 @@ fancy_echo "Installing Ngrok ..."
   wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ngrok-stable-linux-amd64.zip && rm ngrok-stable-linux-amd64.zip
 
 fancy_echo "Installing Sublime Text 3 ..."
-  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-  sudo apt update && sudo apt install -y sublime-text
+  sudo snap install --classic sublime-text
 
 fancy_echo "Installing VS Code ..."
-  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-  sudo apt update && sudo apt install -y code
+  sudo snap install --classic code
 
 fancy_echo "Installing Unity Tweak Tool ..."
   sudo apt install -y unity-tweak-tool
 
-fancy_echo "Installing zsh ..."
+fancy_echo "Installing zsh and making it default shell..."
   sudo apt install -y zsh
+  chsh -s $(which zsh)
 
 fancy_echo "Installing node, to render the rails asset pipeline ..."
   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -93,10 +92,11 @@ fancy_echo "Installing Ruby"
   sudo apt install -y ruby
 
 fancy_echo "Installing Heroku CLI client ..."
-  curl -s https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
-fancy_echo "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables ..."
-  heroku plugins:install git://github.com/ddollar/heroku-config.git
+fancy_echo "Installing Heroku plugins ..."
+  heroku plugins:install heroku-accounts
+  heroku plugins:install heroku-config
 
 fancy_echo "Installing chrome ..."
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -125,5 +125,10 @@ fancy_echo "Installing Wine"
   sudo apt update
   sudo apt install -y --install-recommends winehq-stable
 
-  fancy_echo "Installing oh-my-zsh ..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fancy_echo "Installing oh-my-zsh ..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+if [ -f "$HOME/.laptop-ubuntu.local" ]; then
+  fancy_echo "Running your customizations from ~/.laptop-ubuntu.local ..."
+  . "$HOME/.laptop-ubuntu.local"
+fi
